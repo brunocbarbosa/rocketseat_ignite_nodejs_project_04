@@ -18,6 +18,6 @@ describe('Answer Question', () => {
     })
 
     expect(answer.id).toBeTruthy()
-    expect(inMemoryAnswerRepository.item[0].id).toEqual(answer.id)
+    expect(inMemoryAnswerRepository.items[0].id).toEqual(answer.id)
   })
 })
