@@ -1,14 +1,14 @@
-import { InMemoryAnswerRepository } from 'test/repositories/in-memory-answers-repository'
+import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
 import { makeAnswer } from 'test/factories/make-answer'
 import { DeleteAnswerUseCase } from './delete-answer'
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
 
-let inMemoryAnswerRepository: InMemoryAnswerRepository
+let inMemoryAnswerRepository: InMemoryAnswersRepository
 let sut: DeleteAnswerUseCase // sut: sistem under test
 
 describe('Delete Answer', () => {
   beforeEach(() => {
-    inMemoryAnswerRepository = new InMemoryAnswerRepository()
+    inMemoryAnswerRepository = new InMemoryAnswersRepository()
     sut = new DeleteAnswerUseCase(inMemoryAnswerRepository)
   })
 
