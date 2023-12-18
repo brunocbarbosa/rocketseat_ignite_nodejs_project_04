@@ -1,25 +1,23 @@
 import { AnswerProps } from '../../enterprise/entities/answer'
-import { Question } from '../../enterprise/entities/question'
 import { AnswersRepository } from '../repositories/answers-repository'
-import { QuestionsRepository } from '../repositories/questions-repository'
 
 interface FetchQuestionAnswersUseCaseRequest {
   questionId: string
   page: number
 }
 
-interface FetchQuestionAnswersCaseResponse {
+interface FetchQuestionAnswersUseCaseResponse {
   answers: AnswerProps[]
 }
 
 export class FetchQuestionAnswersUseCase {
-  constructor(private AnswersRepository: AnswersRepository) {}
+  constructor(private answersRepository: AnswersRepository) {}
 
   async execute({
     questionId,
     page,
-  }: FetchQuestionAnswersUseCaseRequest): Promise<FetchQuestionAnswersCaseResponse> {
-    const answers = await this.AnswersRepository.findManyByQuestionId(
+  }: FetchQuestionAnswersUseCaseRequest): Promise<FetchQuestionAnswersUseCaseResponse> {
+    const answers = await this.answersRepository.findManyByQuestionId(
       questionId,
       { page },
     )

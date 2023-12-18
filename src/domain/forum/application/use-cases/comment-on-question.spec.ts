@@ -1,4 +1,4 @@
-import { InMemoryQuestionsCommentsRepository } from 'test/repositories/ub-memory-question-comments-repository'
+import { InMemoryQuestionsCommentsRepository } from 'test/repositories/in-memory-question-comments-repository'
 import { InMemoryQuestionsRepository } from 'test/repositories/in-memory-questions-repository'
 import { CommentOnQuestionUseCase } from './comment-on-question'
 import { makeQuestion } from 'test/factories/make-question'
